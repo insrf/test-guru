@@ -4,6 +4,6 @@ module TestGuru
   PATCH_VERSION = 1
 
   def self.version
-    version = [MAJOR_VERSION, MINOR_VERSION, PATCH_VERSION]
+    [MAJOR_VERSION, MINOR_VERSION, PATCH_VERSION].join
   end
 end
