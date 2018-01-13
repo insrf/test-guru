@@ -1,9 +1,8 @@
 class User < ApplicationRecord
-  def level_view(set_level)
-    user = User.
-    joins('JOIN user_profiles ON user_profiles.name = users.name').
-    joins('JOIN tests ON tests.id = user_profiles.test_id').
-    where("tests.level = ?", set_level).
-    pluck('tests.title')
+  def level_view(level)
+    Test.select('tests.title').
+    joins('JOIN passing_tests ON tests.id = passing_tests.test_id').
+    joins('JOIN users ON passing_tests.name_id = users.id').
+    where("tests.level = ? AND users.id = ?", level, self.name_id)
   end
 end

@@ -42,7 +42,7 @@ users = User.create([{name: "user1", login: "1", password: "111"},
                      {name: "user2", login: "2", password: "222"}, 
                      {name: "user3", login: "3", password: "3"}])
 
-user_profiles = UserProfile.create([{name: "user1", test_id: 1},
-                                    {name: "user1", test_id: 2},
-                                    {name: "user1", test_id: 2},
-                                    {name: "user1", test_id: 1}])
+passing_tests = PassingTest.create([{user_id: "1", test_id: 1},
+                                    {user_id: "1", test_id: 2},
+                                    {user_id: "2", test_id: 2},
+                                    {user_id: "3", test_id: 1}])
