@@ -10,11 +10,11 @@ categories = Category.create([{title: "mathematics"},
                               {title: "history"}, 
                               {title: "astronomy"}])
 
-tests = Test.create([{title: "addition", category_id: 1}, 
-                     {title: "multiplication", level: 2, category_id: 1},
-                     {title: "translation", level: 3, category_id: 1}, 
-                     {title: "XX century", level: 2, category_id: 2}, 
-                     {title: "planets", category_id: 3}])
+tests = Test.create([{title: "addition", category_id: 1, author_id: 1}, 
+                     {title: "multiplication", level: 2, category_id: 1, author_id: 1},
+                     {title: "translation", level: 3, category_id: 1, author_id: 1}, 
+                     {title: "XX century", level: 2, category_id: 2, author_id: 2}, 
+                     {title: "planets", category_id: 3, author_id: 3}])
 
 questions = Question.create([{body: "12 + 5", test_id: 1}, 
                              {body: "125 * 8", test_id: 2}, 
@@ -42,7 +42,7 @@ users = User.create([{name: "user1", login: "1", password: "111"},
                      {name: "user2", login: "2", password: "222"}, 
                      {name: "user3", login: "3", password: "3"}])
 
-passing_tests = PassingTest.create([{user_id: "1", test_id: 1},
-                                    {user_id: "1", test_id: 2},
-                                    {user_id: "2", test_id: 2},
-                                    {user_id: "3", test_id: 1}])
+passing_tests = PassingTest.create([{user_id: 1, test_id: 1},
+                                    {user_id: 1, test_id: 2},
+                                    {user_id: 2, test_id: 2},
+                                    {user_id: 3, test_id: 1}])
