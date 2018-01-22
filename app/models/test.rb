@@ -7,16 +7,15 @@ class Test < ApplicationRecord
 
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }
-  validates :title && :level, uniqueness: true
+  validates :title, uniqueness: { scope: :level }
  
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
-  
-  def self.ordered_test_titles_by_category(name_category)
-    Test.select('tests.title').
-    joins('JOIN categories ON tests.category_id = categories.id').
-    where("categories.title = ?", name_category).
-    order('tests.title DESC')
-  end
+
+  scope :by_level, -> (level) { where(level: level) }
+
+  scope :ordered_test_titles_by_category, -> (name_category) { joins(:category).
+                                                               where("categories.title = ?", name_category).
+                                                               order("tests.title DESC")}
 end

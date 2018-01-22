@@ -4,5 +4,11 @@ class Answer < ApplicationRecord
   validates :body, presence: true
   validate :validate_count_answers
 
-  scope :correct?, -> { where(correct: true) }
+  scope :correct, -> { where(correct: true) }
+
+  private
+
+  def validate_count_answers
+    errors.add(:body) unless Answer.where(question_id: self.question_id).count < 4
+  end
 end
