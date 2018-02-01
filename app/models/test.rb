@@ -15,7 +15,10 @@ class Test < ApplicationRecord
 
   scope :by_level, -> (level) { where(level: level) }
 
-  scope :ordered_test_titles_by_category, -> (name_category) { joins(:category).
-                                                               where("categories.title = ?", name_category).
-                                                               order("tests.title DESC")}
+  scope :by_category, -> (name_category) { joins(:category).
+                                           where(categories: { title: name_category }) }
+
+  def self.ordered_test_titles_by_category(name_category)
+    self.by_category(name_category).order(title: :desc).pluck(:title)
+  end
 end

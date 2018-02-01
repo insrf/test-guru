@@ -6,20 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-categories = Category.create([{title: "mathematics"}, 
-                              {title: "history"}, 
+categories = Category.create([{title: "mathematics"},
+                              {title: "history"},
                               {title: "astronomy"}])
 
-tests = Test.create([{title: "addition", category_id: 1, author_id: 1}, 
+tests = Test.create([{title: "addition", category_id: 1, author_id: 1},
                      {title: "multiplication", level: 2, category_id: 1, author_id: 1},
-                     {title: "translation", level: 3, category_id: 1, author_id: 1}, 
-                     {title: "XX century", level: 2, category_id: 2, author_id: 2}, 
+                     {title: "translation", level: 3, category_id: 1, author_id: 1},
+                     {title: "XX century", level: 2, category_id: 2, author_id: 2},
                      {title: "planets", category_id: 3, author_id: 3}])
 
-questions = Question.create([{body: "12 + 5", test_id: 1}, 
-                             {body: "125 * 8", test_id: 2}, 
+questions = Question.create([{body: "12 + 5", test_id: 1},
+                             {body: "125 * 8", test_id: 2},
                              {body: "10F(hex) in dec", test_id: 3},
-                             {body: "The first Russian revolution", test_id: 4}, 
+                             {body: "The first Russian revolution", test_id: 4},
                              {body: "Name our planet", test_id: 5}])
 
 answers = Answer.create([{body: "18", correct: 1, question_id: 1},
@@ -38,8 +38,8 @@ answers = Answer.create([{body: "18", correct: 1, question_id: 1},
                          {body: "Mars", question_id: 5},
                          {body: "Moon", question_id: 5}])
 
-users = User.create([{name: "user1", login: "1", password: "111", email: "user1@example.com"}, 
-                     {name: "user2", login: "2", password: "222", email: "user2@example.com"}, 
+users = User.create([{name: "user1", login: "1", password: "111", email: "user1@example.com"},
+                     {name: "user2", login: "2", password: "222", email: "user2@example.com"},
                      {name: "user3", login: "3", password: "333", email: "user3@example.com"}])
 
 passing_tests = PassingTest.create([{user_id: 1, test_id: 1},

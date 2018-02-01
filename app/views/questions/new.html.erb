@@ -1,0 +1,21 @@
+<h1>Create New Question</h1>
+
+<form action="/tests/1/questions" method="post">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+  <p>
+    <label for="questions-body">Body</label>
+    <input type="text" name="question[body]" id="questions-body">
+  </p><br>
+
+  <p>
+    <label for="questions-test-id">Test id</label>
+    <input type="text" name="question[test_id]" id="questions-test-id">
+  </p><br>
+
+  <input type="submit" value="Create">
+</form>
+
+<h1>Delete question</h1>
+
+<a href="/questions/<%= params[:id] %>" data-method="delete">Delete question</a>
