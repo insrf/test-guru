@@ -1,16 +1,4 @@
-<h1>Create New Question</h1>
+<h1>Create New  <%= @test.title %> Question</h1>
 
-<form action="/tests/<%= params[:test_id] %>/questions" method="post">
-  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-
-  <p>
-    <label for="questions-body">Body</label>
-    <input type="text" name="question[body]" id="questions-body">
-  </p><br>
-
-  <input type="submit" value="Create">
-</form>
-
-<h1>Delete question</h1>
-
-<a href="/questions/<%= params[:id] %>" data-method="delete">Delete question</a>
+<%= render 'form' %>
+<%= link_to 'Back', test_questions_path %>

@@ -8,7 +8,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body >
     <%= yield %>
+    <%= render file: 'public/about' %>
+    <p align="center"> <%= Time.now.year %> год</p>
   </body>
 </html>
