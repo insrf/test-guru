@@ -1,5 +1,5 @@
 module ApplicationHelper
   def year_now
-    Time.now.year
+    Time.current.year
   end
 end

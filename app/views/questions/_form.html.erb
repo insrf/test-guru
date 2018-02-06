@@ -6,10 +6,5 @@
     <%= form.text_field :body, id: :question_body %>
   </p><br>
 
-  <p>
-    <%= form.label :test_id %>
-    <%= form.collection_select :test_id, Test.all, :id, :title, prompt:true %>
-  </p>
-
   <p><%= form.submit %></p>
 <% end %>
