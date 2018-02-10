@@ -1,21 +1,17 @@
 <h1>All tests</h1>
 
 <% if @tests.present? %>
-<table>
+<table border="3">
   <tr>
     <th>Title</th>
     <th>Level</th>
     <th>Action</th>
   </tr>
 
-  <% @tests.each do |test| %>
   <tr>
-    <td><%= test.title %></td>
-    <td><%= test_level(test) %></td>
-    <td><%= link_to 'View', test_path(test) %></td>
+  <%= render @tests%>
   </tr>
 
-  <% end %>
 </table>
 <% else %>
   <p>You have no tests</p>

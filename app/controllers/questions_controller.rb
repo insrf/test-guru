@@ -1,25 +1,37 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index]
-
-  def index
-    render plain: @test.questions.pluck(:body).join("\n")
-    #render plain: Question.where(test_id: params[:test_id]).pluck('body').join("\n")
-  end
+  before_action :find_test , only: %i[new create]
+  before_action :find_question , only: %i[show edit update destroy]
 
   def show
-    render plain: Question.find(params[:id]).body
   end
 
   def new
+    @question = @test.questions.new
+  end
+
+  def edit
   end
 
   def create
-    question = Question.create(body: question_params[:body], test_id: params[:test_id])
-    render plain: question.inspect
+    @question = @test.questions.new(question_params)
+    if @question.save
+      redirect_to @question
+    else
+      render :new
+    end
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
+    end
   end
 
   def destroy
-    Question.destroy(params[:id])
+    @question.destroy
+    redirect_to test_path(@question.test)
   end
 
   private
@@ -30,5 +42,9 @@ class QuestionsController < ApplicationController
 
   def find_test
     @test = Test.find(params[:test_id])
+  end
+
+  def find_question
+    @question = Question.find(params[:id])
   end
 end
