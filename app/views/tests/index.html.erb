@@ -1,0 +1,18 @@
+<h1>All tests</h1>
+
+<% if @tests.present? %>
+<table border="3">
+  <tr>
+    <th>Title</th>
+    <th>Level</th>
+    <th>Action</th>
+  </tr>
+
+  <tr>
+  <%= render @tests%>
+  </tr>
+
+</table>
+<% else %>
+  <p>You have no tests</p>
+<% end %>
