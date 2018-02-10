@@ -4,25 +4,10 @@
   <%= link_to 'New question', new_test_question_path(test_id: params[:id]) %>
 </p>
 
-<table border="3">
-  <tr>
-    <th>Title</th>
-    <th>Level</th>
-    <th>Quantity Questions</th>
-    <th>Questions</th>
-    <th colspan="2">Action</th>
-  </tr>
-
-  <tr>
-    <td rowspan="<%= @test.questions.count+1 %>" align="center"><%= @test.title %></td>
-    <td rowspan="<%= @test.questions.count+1 %>" align="center"><%= test_level(@test) %></td>
-    <td rowspan="<%= @test.questions.count+1 %>" align="center"><%= @test.questions.count %></td>
-  </tr>
-
-  <tr>
-  <%= render @test.questions[1..-1] %>
-  </tr>
-
-</table>
+<h2>Title: <%= @test.title %></h2>
+<p>Level: <%= test_level(@test) %></p>
+<p>Quantity Questions: <%= @test.questions.count %></p>
+<p>Questions list: </p>
+<%= render @test.questions %>
 
 <%= link_to 'Back', tests_path %>

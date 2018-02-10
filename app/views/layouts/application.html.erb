@@ -10,7 +10,6 @@
 
   <body >
     <%= yield %>
-    <%= render file: 'layouts/footer' %>
-    <p align="center"> <%= year_now %> год</p>
+    <%= render "shared/footer" %>
   </body>
 </html>
