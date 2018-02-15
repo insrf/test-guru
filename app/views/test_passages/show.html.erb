@@ -1,6 +1,6 @@
 <h1>Passing the <%= @test_passage.test.title %> Test<h1>
 
-<p>Answers <%=  @test_passage.test.questions.pluck(:body).rindex("#{@test_passage.current_question.body}") + 1 %> /
+<p>Answers <%=  @test_passage.index_current_question %> /
 <%= @test_passage.test.questions.count %></p>
 
 <b>

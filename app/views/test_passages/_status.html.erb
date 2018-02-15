@@ -1,15 +1,15 @@
-<% if @test_passage.correct_questions / @test_passage.test.questions.count >= 0.85 %>
+<% if @test_passage.success? %>
 
 <font color="green"> The Test <%= @test_passage.test.title %> passed successfully </font><br>
 <font color="green"> Correct
-<%= ((((@test_passage.correct_questions).to_f / (@test_passage.test.questions.count).to_f).round 3 ) * 100).to_i  %>
+<%= @test_passage.success_rate  %>
  %</font>
 
   <% else %>
 
 <font color="red"> The Test <%= @test_passage.test.title %> failed </font><br>
 <font color="red"> Correct
-<%= ((((@test_passage.correct_questions).to_f / (@test_passage.test.questions.count).to_f).round 3 ) * 100).to_i %>
+<%= @test_passage.success_rate %>
 %</font>
 
 <% end %>
