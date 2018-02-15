@@ -12,7 +12,7 @@ module TestGuru
     config.load_defaults 5.1
 
     config.time_zone = 'Ekaterinburg'
-    config.i18n.default_locale = :ru
+    config.i18n.default_locale = :en
     I18n.config.enforce_available_locales = false
 
 

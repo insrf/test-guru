@@ -17,32 +17,31 @@ tests = Test.create([{title: "addition", category_id: 1, author_id: 1},
                      {title: "planets", category_id: 3, author_id: 3}])
 
 questions = Question.create([{body: "12 + 5", test_id: 1},
+                             {body: "20 + 5", test_id: 1},
                              {body: "125 * 8", test_id: 2},
                              {body: "10F(hex) in dec", test_id: 3},
                              {body: "The first Russian revolution", test_id: 4},
                              {body: "Name our planet", test_id: 5}])
 
-answers = Answer.create([{body: "18", correct: 1, question_id: 1},
+answers = Answer.create([{body: "17", correct: 1, question_id: 1},
                          {body: "19", question_id: 1},
-                         {body: "17", question_id: 1},
-                         {body: "1000", correct: 1, question_id: 2},
-                         {body: "1200", question_id: 2},
-                         {body: "1100", question_id: 2},
-                         {body: "271", correct: 1, question_id: 3},
-                         {body: "273", question_id: 3},
-                         {body: "261", question_id: 3},
-                         {body: "1905", correct: 1, question_id: 4},
-                         {body: "1917", question_id: 4},
-                         {body: "1901", question_id: 4},
-                         {body: "Earth", correct: 1, question_id: 5},
-                         {body: "Mars", question_id: 5},
-                         {body: "Moon", question_id: 5}])
+                         {body: "18", question_id: 1},
+                         {body: "25", correct: 1, question_id: 2},
+                         {body: "26", question_id: 2},
+                         {body: "24", question_id: 2},
+                         {body: "1000", correct: 1, question_id: 3},
+                         {body: "1200", question_id: 3},
+                         {body: "1100", question_id: 3},
+                         {body: "271", correct: 1, question_id: 4},
+                         {body: "273", question_id: 4},
+                         {body: "261", question_id: 4},
+                         {body: "1905", correct: 1, question_id: 5},
+                         {body: "1917", question_id: 5},
+                         {body: "1901", question_id: 5},
+                         {body: "Earth", correct: 1, question_id: 6},
+                         {body: "Mars", question_id: 6},
+                         {body: "Moon", question_id: 6}])
 
 users = User.create([{name: "user1", login: "1", password: "111", email: "user1@example.com"},
                      {name: "user2", login: "2", password: "222", email: "user2@example.com"},
                      {name: "user3", login: "3", password: "333", email: "user3@example.com"}])
-
-passing_tests = PassingTest.create([{user_id: 1, test_id: 1},
-                                    {user_id: 1, test_id: 2},
-                                    {user_id: 2, test_id: 2},
-                                    {user_id: 3, test_id: 1}])
