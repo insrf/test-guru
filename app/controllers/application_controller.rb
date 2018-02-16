@@ -3,10 +3,10 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_not_found
 
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
+  before_action :set_cookies_path
   helper_method :current_user,
-                :logged_in?
-
+                :logged_in?,
 
 
   def rescue_not_found
@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def set_cookies_path
+    cookies[:path] = root_path
+  end
 
   def authenticate_user!
     unless current_user
@@ -23,6 +27,10 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+  end
+
+  def logged_out
+    session[:user_id] = nil
   end
 
   def logged_in?
