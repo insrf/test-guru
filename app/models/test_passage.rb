@@ -49,8 +49,4 @@ class TestPassage < ApplicationRecord
   def correct_answers
     self.current_question.answers.correct
   end
-
-  # def next_question
-  #   test.questions.order(:id).where('id > ?', current_question.id).first
-  # end
 end
