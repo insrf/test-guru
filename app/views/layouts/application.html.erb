@@ -10,10 +10,8 @@
 
   <body >
     <h1><%= link_to 'TestGuru', root_path %></h1>
-    <% if logged_in? %>
-      <p class="nav user">Welcome, <b><%=current_user.email %></b> Guru |
-      <%= link_to 'logout', logout_path %></p>
-    <% end %>
+    <%= render 'shared/flash' %>
+    <%= render 'layouts/navigation' %>
 
     <%= yield %>
     <div class="footer"><%= render "shared/footer" %></div>
