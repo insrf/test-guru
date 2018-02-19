@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_not_found
 
   before_action :authenticate_user!
-  before_action :set_cookies_path
   helper_method :current_user,
                 :logged_in?,
 
@@ -15,15 +14,10 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def set_cookies_path
-    if session[:user_id] == nil
-      cookies[:path] = root_path
-    end
-  end
-
   def authenticate_user!
     unless current_user
       flash[:alert] = 'Are you a Guru? Verify your Email and Password please'
+      cookies[:path] = root_path
       redirect_to login_path
     end
   end

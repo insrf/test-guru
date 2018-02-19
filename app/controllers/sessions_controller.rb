@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to cookies[:path]
+      redirect_to cookies[:path] || root_paths
     else
       render :new
     end
