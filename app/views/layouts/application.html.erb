@@ -9,6 +9,10 @@
   </head>
 
   <body >
+    <h1><%= link_to 'TestGuru', root_path %></h1>
+    <%= render 'shared/flash' %>
+    <%= render 'layouts/navigation' %>
+
     <%= yield %>
     <div class="footer"><%= render "shared/footer" %></div>
   </body>
