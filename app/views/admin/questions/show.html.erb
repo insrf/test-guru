@@ -1,0 +1,19 @@
+<h1>Question</h1>
+
+<ul>
+  <li>Test: <%= @question.test.title %></li>
+  <li>Body: <%= @question.body %></li>
+</ul>
+
+<h2> Answers <h2>
+
+<p>
+  <%= link_to 'New answer', new_admin_question_answer_path(@question) %>
+</p>
+
+<ol>
+  <%= render @question.answers %>
+</ol>
+
+<%= link_to 'Edit', edit_admin_question_path(@question) %> |
+<%= link_to 'Back', admin_tests_path(@question.test) %>
