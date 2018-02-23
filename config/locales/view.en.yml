@@ -1,0 +1,83 @@
+en:
+  helpers:
+    submit:
+      test:
+        create: "create test"
+        update: "update test"
+      question:
+        create: "create question"
+        update: "update question"
+      answer:
+        create: "create answer"
+        update: "update answer"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    footer:
+      project_name: "Educational project in an online school Thinknetica"
+      year: "year"
+
+  layouts:
+    navigation:
+      welcome: "welcome"
+      logout: "logout"
+      registration: "registration"
+    admin:
+      title: "Admin Panel | TestGuru"
+
+  admin:
+    nav:
+      title: "Admin Panel | TestGuru"
+      welcome: "Welcome"
+      logout: "logout"
+    tests:
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+      create:
+        success: "Test was successfully created"
+      index:
+        header: "All tests"
+        new_test: "Create new test"
+        title: "Title"
+        level: "Level"
+        count: "Count"
+        action: "Action"
+        zero: "You have no tests"
+      edit:
+        header: "Edit %{title}"
+        back: "Back"
+      new:
+        header: "Create New Test"
+        back: "Back"
+      show:
+        header: "Test"
+        new_question: "Create new question"
+        title: "Title"
+        level: "Level"
+        count: "Quantity Questions: "
+        list: "Questions list"
+        back: "Back"
+
+  tests:
+    index:
+      header: "All tests"
+      title: "Title"
+      level: "Level"
+      action: "Action"
+      zero: "You have no tests"
+    test:
+      start: "Start"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
