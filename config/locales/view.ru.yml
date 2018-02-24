@@ -1,0 +1,85 @@
+ru:
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+      question:
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
+      answer:
+        create: "Добавить ответ"
+        update: "Обновить ответ"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружено %{count} ошибкa"
+        other: "Обнаружено %{count} ошибки"
+    footer:
+      project_name: "Учебный проект в онлайн-школе Thinknetica"
+      year: "год"
+
+  layouts:
+    navigation:
+      welcome: "Приветствую"
+      logout: "Выход"
+      registration: "Регистрация"
+    admin:
+      title: "Панель администратора | TestGuru"
+
+  admin:
+    nav:
+      title: "Панель администратора | TestGuru"
+      welcome: "Приветствую"
+      logout: "Выход"
+    tests:
+      test:
+        show: "Просмотр"
+        edit: "Редактировать"
+        delete: "Удалить"
+      create:
+        success: "Тест успешно создан"
+      index:
+        header: "Все тесты"
+        new_test: "Создать новый тест"
+        title: "Название"
+        level: "Уровень"
+        count: "Количество"
+        action: "Действие"
+        zero: "У тебя нет тестов"
+      edit:
+        header: "Редактирование %{title}"
+        back: "Назад"
+      new:
+        header: "Создать новый тест"
+        back: "Назад"
+      show:
+        header: "Тест"
+        new_question: "Создать новый вопрос"
+        title: "Название %{title}"
+        level: "Сложность %{level}"
+        count: "Количество вопросов %{count}"
+        list: "Список вопросов"
+        back: "Назад"
+
+  tests:
+    index:
+      header: "Все тесты"
+      title: "Название"
+      level: "Уровень"
+      action: "Действие"
+      zero: "У тебя нет тестов"
+    test:
+      start: "Начать"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru"

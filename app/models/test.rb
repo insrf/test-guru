@@ -6,6 +6,7 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: "User"
 
   validates :title, presence: true
+  validates :category_id, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }
   validates :title, uniqueness: { scope: :level }
 
