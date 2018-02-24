@@ -1,5 +1,8 @@
 <tr>
   <td><%= test.title %></td>
   <td><%= test_level(test) %></td>
-  <td><%= button_to t('.start'), start_test_path(test) %></td>
+  <td><button type="button" class="btn btn-primary">
+  <%= button_to t('.start'), start_test_path(test) %>
+  </button>
+  </td>
 </tr>

@@ -1,12 +1,14 @@
 <h1><%= t('.header') %></h1>
 
 <% if @tests.present? %>
-<table>
+<table class="table table-reflow">
+  <thead class="thead-inverse">
   <tr>
     <th><%= t('.title') %></th>
     <th><%= t('.level') %></th>
     <th><%= t('.action') %></th>
   </tr>
+</thead>
 
   <%= render @tests%>
 

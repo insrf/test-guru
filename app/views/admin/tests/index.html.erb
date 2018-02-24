@@ -1,11 +1,11 @@
 <h1><%= t('.header') %></h1>
 
-<p>
+<button type="button" class="btn-lg btn-block">
   <%=link_to t('.new_test'), new_admin_test_path %>
-</p>
+</button>
 
 <% if @tests.present? %>
-<table>
+<table class="table table-reflow">
   <tr>
     <th><%= t('.title') %></th>
     <th><%= t('.level') %></th>
