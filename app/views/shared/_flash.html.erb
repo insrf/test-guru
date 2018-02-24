@@ -1,5 +1,11 @@
 <% flash.each do |key, massage| %>
-  <div class="alert alert-success">
-    <%= content_tag :p, massage, class: "flash #{key}" %>
-  </div>
+  <% if key == 'notice' %>
+    <div class="alert alert-success">
+      <%= content_tag :p, massage, class: "flash #{key}" %>
+    </div>
+  <% else key == 'alert' %>
+    <div class="alert alert-danger">
+      <%= content_tag :p, massage, class: "flash #{key}" %>
+    </div>
+  <% end %>
 <% end %>
