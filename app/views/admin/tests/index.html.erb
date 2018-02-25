@@ -1,17 +1,19 @@
 <h1><%= t('.header') %></h1>
 
-<button type="button" class="btn-lg btn-block">
+<button type="button" >
   <%=link_to t('.new_test'), new_admin_test_path %>
 </button>
 
 <% if @tests.present? %>
-<table class="table table-reflow">
-  <tr>
-    <th><%= t('.title') %></th>
-    <th><%= t('.level') %></th>
-    <th><%= t('.count') %></th>
-    <th colspan="3"><%= t('.action') %></th>
-  </tr>
+<table class="table-sm table-striped table-bordered">
+  <thead class="thead-inverse">
+    <tr>
+      <th><%= t('.title') %></th>
+      <th><%= t('.level') %></th>
+      <th><%= t('.count') %></th>
+      <th colspan="3"><%= t('.action') %></th>
+    </tr>
+  </thead>
 
   <%= render @tests%>
 

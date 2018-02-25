@@ -1,11 +1,11 @@
-<h1>Passing the <%= @test_passage.test.title %> Test<h1>
-<span>
+<h1>Passing the <%= @test_passage.test.title %> Test</h1>
+
 
 <progress class="progress" value="<%=  @test_passage.index_current_question %>" max="<%= @test_passage.test.questions.count %>">
 </progress>
 
 <b>
-  <%= @test_passage.current_question.body %>
+  <h2><%= @test_passage.current_question.body %> ?</h2>
 </b>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
@@ -19,5 +19,3 @@
 
   <button type="button" class="btn btn-success-outline"><%= form.submit 'Next' %></button>
 <% end %>
-
-</span>
