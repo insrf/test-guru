@@ -1,3 +1,3 @@
 <% flash.each do |key, massage| %>
-  <%= content_tag :p, massage, class: "flash #{key}" %>
+  <%= content_tag :p, massage, class: flash_css_class(key) %>
 <% end %>

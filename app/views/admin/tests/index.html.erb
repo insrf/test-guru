@@ -1,17 +1,19 @@
 <h1><%= t('.header') %></h1>
 
-<p>
+<button type="button" >
   <%=link_to t('.new_test'), new_admin_test_path %>
-</p>
+</button>
 
 <% if @tests.present? %>
-<table>
-  <tr>
-    <th><%= t('.title') %></th>
-    <th><%= t('.level') %></th>
-    <th><%= t('.count') %></th>
-    <th colspan="3"><%= t('.action') %></th>
-  </tr>
+<table class="table-sm table-striped table-bordered">
+  <thead class="thead-inverse">
+    <tr>
+      <th><%= t('.title') %></th>
+      <th><%= t('.level') %></th>
+      <th><%= t('.count') %></th>
+      <th colspan="3"><%= t('.action') %></th>
+    </tr>
+  </thead>
 
   <%= render @tests%>
 

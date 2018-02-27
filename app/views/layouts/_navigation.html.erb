@@ -1,6 +1,0 @@
-<% if user_signed_in? %>
-  <p class="nav user"> <%= t('.welcome') %>, <b><%=current_user.email %></b> Guru |
-  <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
-  <% else %>
-  <%= link_to t('.registration'), new_user_registration_path %></p>
-<% end %>
