@@ -81,3 +81,8 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+
+  test_passages:
+    gist:
+      success: "Gist was successfully created."
+      failure: "An error occurres while saving gist"
