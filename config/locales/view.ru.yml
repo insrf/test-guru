@@ -69,6 +69,12 @@ ru:
         count: "Количество вопросов %{count}"
         list: "Список вопросов"
         back: "Назад"
+    gists:
+      index:
+        header: "Все gists"
+        question: "Вопрос"
+        user_email: "Почта пользователя"
+        back: "Назад"
 
   tests:
     index:

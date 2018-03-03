@@ -67,6 +67,12 @@ en:
         count: "Quantity Questions: "
         list: "Questions list"
         back: "Back"
+    gists:
+      index:
+        header: "All gists"
+        question: "Question"
+        user_email: "User email"
+        back: "Back"
 
   tests:
     index:

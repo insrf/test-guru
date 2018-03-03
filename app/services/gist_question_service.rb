@@ -1,9 +1,11 @@
+require 'dotenv/load'
+
 class GistQuestionService
 
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
-    @client = client || GitHubClient.new
+    @client = client || Octokit::Client.new(:access_token => ENV['GITHUB_TOKEN'])
   end
 
   def call

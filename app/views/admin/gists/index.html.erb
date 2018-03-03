@@ -1,0 +1,16 @@
+<h1><%= t('.header') %></h1>
+
+<table class="table-sm table-striped table-bordered">
+  <thead class="thead-inverse">
+  <tr>
+    <th><%= t('.question') %></th>
+    <th>Gist URL</th>
+    <th><%= t('.user_email') %></th>
+  </tr>
+</thead>
+
+  <%= render @gists%>
+
+</table>
+
+<%= link_to t('.back'), admin_tests_path %>
