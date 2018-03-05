@@ -94,3 +94,5 @@ ru:
     gist:
       success: "Gist успешно создан."
       failure: "Во время сохранения gist произошла ошибка"
+    show:
+      gist_question: "Создать gist"

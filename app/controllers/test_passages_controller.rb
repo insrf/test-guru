@@ -22,11 +22,12 @@ class TestPassagesController < ApplicationController
   def gist
     result = GistQuestionService.new(@test_passage.current_question).call
 
-    current_user.gists.create(question_id: @test_passage.current_question.id, url: result.url)
+    current_user.gists.create(question_id: @test_passage.current_question.id,
+                              url: result.url,
+                              created_correct: result.created_at?)
 
-    flash_options = if result.public?
+    flash_options = if result.created_at?
       { notice: "#{t('.success')}  #{result.html_url}"}
-
     else
       { alert: t('.failure') }
     end
@@ -35,11 +36,6 @@ class TestPassagesController < ApplicationController
   end
 
   private
-
-  def add_gist_db
-
-  end
-
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])

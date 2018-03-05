@@ -92,3 +92,5 @@ en:
     gist:
       success: "Gist was successfully created."
       failure: "An error occurres while saving gist"
+    show:
+      gist_question: "Create a gist"
