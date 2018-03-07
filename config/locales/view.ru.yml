@@ -69,6 +69,12 @@ ru:
         count: "Количество вопросов %{count}"
         list: "Список вопросов"
         back: "Назад"
+    gists:
+      index:
+        header: "Все gists"
+        question: "Вопрос"
+        user_email: "Почта пользователя"
+        back: "Назад"
 
   tests:
     index:
@@ -83,3 +89,10 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru"
+
+  test_passages:
+    gist:
+      success: "Gist успешно создан."
+      failure: "Во время сохранения gist произошла ошибка"
+    show:
+      gist_question: "Создать gist"

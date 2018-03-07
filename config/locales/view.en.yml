@@ -67,6 +67,12 @@ en:
         count: "Quantity Questions: "
         list: "Questions list"
         back: "Back"
+    gists:
+      index:
+        header: "All gists"
+        question: "Question"
+        user_email: "User email"
+        back: "Back"
 
   tests:
     index:
@@ -81,3 +87,10 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+
+  test_passages:
+    gist:
+      success: "Gist was successfully created."
+      failure: "An error occurres while saving gist"
+    show:
+      gist_question: "Create a gist"
