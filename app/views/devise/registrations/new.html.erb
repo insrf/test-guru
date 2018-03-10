@@ -22,17 +22,17 @@
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
           </div>
 
-          <div class="field">
+          <div class="field coincidence">
             <%= f.label :password %>
             <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %><br />
-            <%= f.password_field :password, autocomplete: "off" %>
+            <%= f.password_field :password, autocomplete: "off", id: :password %>
           </div>
 
-          <div class="field">
+          <div class="fields coincidence">
             <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", id: :password_confirmation %>
           </div>
 
           <div class="actions">
