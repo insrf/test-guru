@@ -4,7 +4,11 @@
 <table class="table-sm table-striped table-bordered">
   <thead class="thead-inverse">
   <tr>
-    <th><%= t('.title') %></th>
+    <th class="sort-by-title pointer">
+    <%= t('.title') %>
+    <%= octicon "arrow-down", class: 'text-succes hide' %>
+    <%= octicon "arrow-up", class: 'text-succes hide' %>
+    </th>
     <th><%= t('.level') %></th>
     <th><%= t('.action') %></th>
   </tr>
