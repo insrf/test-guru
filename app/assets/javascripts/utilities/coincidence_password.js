@@ -9,6 +9,8 @@ document.addEventListener('turbolinks:load', function() {
       document.getElementById("password").classList.add('green')
       document.getElementById("password_confirmation").classList.add('green')
     } else {
+      document.getElementById("password").classList.remove('green')
+      document.getElementById("password_confirmation").classList.remove('green')
       document.getElementById("password").classList.add('red')
       document.getElementById("password_confirmation").classList.add('red')
     }
