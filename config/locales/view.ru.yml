@@ -69,6 +69,8 @@ ru:
         count: "Количество вопросов %{count}"
         list: "Список вопросов"
         back: "Назад"
+      form_inline:
+        submit: "ok"
     gists:
       index:
         header: "Все gists"

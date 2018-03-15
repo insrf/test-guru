@@ -1,18 +1,24 @@
 <tr>
-  <td><%= test.title %></td>
-  <td><%= test_level(test) %></td>
-  <td><%= test.questions.count %></td>
-  <td>
+  <td class="align-middle">
+    <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
+    <%= render 'form_inline', test: test == @test ? @test : test %>
+  </td>
+  <td class="align-middle"><%= test_level(test) %></td>
+  <td class="align-middle"><%= test.questions.count %></td>
+  <td class="align-middle">
     <button type="button">
       <%= link_to t('.show'), admin_test_path(test) %>
     </button>
   </td>
-  <td>
+  <td class="align-middle">
     <button type="button">
-      <%= link_to t('.edit'), edit_admin_test_path(test) %>
+      <%= link_to t('.edit'),
+                  edit_admin_test_path(test),
+                  data: { test_id: test.id },
+                  class: 'form-inline-link' %>
     </button>
   </td>
-  <td>
+  <td class="align-middle">
     <button type="button" class="btn btn-warning-outline">
       <%= link_to t('.delete'), admin_test_path(test),
                             method: :delete,

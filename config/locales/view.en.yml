@@ -67,6 +67,8 @@ en:
         count: "Quantity Questions: "
         list: "Questions list"
         back: "Back"
+      form_inline:
+        submit: "ok"
     gists:
       index:
         header: "All gists"
