@@ -25,6 +25,10 @@ class TestPassage < ApplicationRecord
     ((((self.correct_questions).to_f / (self.test.questions.count).to_f).round 3 ) * 100).to_i
   end
 
+  def progress
+    ((((self.index_current_question - 1).to_f / (self.test.questions.count).to_f).round 3 ) * 100).to_i
+  end
+
   def index_current_question
     self.test.questions.pluck(:body).rindex(self.current_question.body) + 1
   end

@@ -1,8 +1,9 @@
 <h1>Passing the <%= @test_passage.test.title %> Test</h1>
 
-
-<progress class="progress" value="<%=  @test_passage.index_current_question %>" max="<%= @test_passage.test.questions.count %>">
-</progress>
+<div class = "bar">
+  <%= content_tag :div, "#{@test_passage.progress} %",
+                   class: 'my-progress', data: { value: @test_passage.progress } %>
+</div>
 
 <b>
   <h2><%= @test_passage.current_question.body %> ?</h2>
