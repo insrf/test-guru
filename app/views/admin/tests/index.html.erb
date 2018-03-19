@@ -4,6 +4,8 @@
   <%=link_to t('.new_test'), new_admin_test_path %>
 </button>
 
+<%= render 'shared/errors', resource: @test %>
+
 <% if @tests.present? %>
 <table class="table-sm table-striped table-bordered">
   <thead class="thead-inverse">
