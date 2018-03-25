@@ -41,7 +41,3 @@ answers = Answer.create([{body: "17", correct: 1, question_id: 1},
                          {body: "Earth", correct: 1, question_id: 6},
                          {body: "Mars", question_id: 6},
                          {body: "Moon", question_id: 6}])
-
-users = User.create([{name: "user1", email: "user1@example.com", password_digest: "111"},
-                     {name: "user2", email: "user1@example.com", password_digest: "222"},
-                     {name: "user3", email: "user1@example.com", password_digest: "333"}])
