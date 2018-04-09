@@ -1,0 +1,27 @@
+<h1> Feedback </h1>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h3>Send me a message</h3>
+
+        <%= form_tag feedbacks_path do %>
+          <div class="row">
+            <div class="form-group col-sm-6">
+              <label for="first_name" class="h4">Name</label>
+              <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter name" required>
+            </div>
+
+            <div class="form-group col-sm-6">
+              <label for="email" class="h4">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label for="content" class="h4 ">Message</label>
+            <textarea id="content" name="content" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
+          </div>
+          <button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Submit</button>
+          <% end %>
+    </div>
+  </div>

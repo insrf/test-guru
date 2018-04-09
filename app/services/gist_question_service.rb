@@ -1,5 +1,3 @@
-require 'dotenv/load'
-
 class GistQuestionService
 
   def initialize(question, client: nil)
