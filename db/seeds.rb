@@ -13,8 +13,8 @@ categories = Category.create([{title: "mathematics"},
 tests = Test.create([{title: "addition", category_id: 1, author_id: 1},
                      {title: "multiplication", level: 2, category_id: 1, author_id: 1},
                      {title: "translation", level: 3, category_id: 1, author_id: 1},
-                     {title: "XX century", level: 2, category_id: 2, author_id: 2},
-                     {title: "planets", category_id: 3, author_id: 3}])
+                     {title: "XX century", level: 2, category_id: 2, author_id: 1},
+                     {title: "planets", category_id: 3, author_id: 1}])
 
 questions = Question.create([{body: "12 + 5", test_id: 1},
                              {body: "20 + 5", test_id: 1},
