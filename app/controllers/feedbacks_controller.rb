@@ -7,17 +7,13 @@ class FeedbacksController < ApplicationController
   end
 
   def create
-    first_name = params[:first_name]
-    email = params[:email]
-    content = params[:content]
-    @feedback_params = [first_name, email, content]
-    FeedbackMailer.feedback_send(@feedback_params).deliver_now
+    FeedbackMailer.feedback_send(params[:first_name], params[:email], params[:content]).deliver_now
 
     redirect_to session.delete(:return_to)
   end
 
   private
-  
+
   def save_back_path_session
     session[:return_to] ||= request.referer
   end
