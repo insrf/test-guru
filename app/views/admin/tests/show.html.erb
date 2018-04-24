@@ -6,6 +6,10 @@
 
 <h2><%= t('.title', title: @test.title) %></h2>
 <p><%= t('.level', level: test_level(@test) )%></p>
+<p> Timer_on: <%= @test.timer_on %></p>
+<% if @test.timer_on == true %>
+<p> Timer <%= @test.timer.strftime("%H:%M") %></p>
+<% end %>
 <p><%= t('.count', count: @test.questions.count) %></p>
 <p><%= t('.list') %></p>
 <%= render @test.questions %>

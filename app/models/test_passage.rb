@@ -33,6 +33,14 @@ class TestPassage < ApplicationRecord
     self.test.questions.pluck(:body).rindex(self.current_question.body) + 1
   end
 
+  def correcting_timer
+    self.test.timer.hour * 3600 + self.test.timer.min * 60
+  end
+
+  def timeout
+    correcting_timer - (Time.now.to_i % 86400 - self.created_at.to_i % 86400)
+  end
+
   private
 
   def before_validation_set_first_question
@@ -53,4 +61,5 @@ class TestPassage < ApplicationRecord
   def correct_answers
     self.current_question.answers.correct
   end
+
 end

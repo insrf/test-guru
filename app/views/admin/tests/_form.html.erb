@@ -14,10 +14,17 @@
   <p>
     <%= form.label :category_id %><br>
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
-
   </p><br>
 
+  <p class='timer_on'>
+    <%= form.label :timer_on %><br>
+    <%= form.check_box :timer_on, id: :timer_on %>
+  </p><br>
 
+  <p class='hide' id=timer >
+    <%= form.label :timer %><br>
+    <%= form.time_select :timer%>
+  </p><br>
 
 <p><%= form.submit %></p>
 <% end %>
