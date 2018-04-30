@@ -1,11 +1,10 @@
 <tr>
   <td><%= test.title %></td>
   <td><%= test_level(test) %></td>
-  <td class="align-middle"><%= test.timer_on %></td>
-  <% if test.timer_on == true %>
-  <td class="align-middle"><%= test.timer.strftime("%H:%M") %></td>
-  <% else %>
+  <% if test.timer.nil? %>
   <td class="align-middle">Without timer</td>
+  <% else %>
+  <td class="align-middle"><%= test.timer %></td>
   <% end %>
   <td>
   <%= button_to t('.start'), start_test_path(test), class: "btn btn-primary" %>

@@ -1,6 +1,7 @@
 class Admin::TestsController < Admin::BaseController
   before_action :find_tests, only: %i[index update_inline]
   before_action :find_test, only: %i[show edit update destroy start update_inline]
+  skip_before_action :verify_authenticity_token
 
   def index
 
@@ -19,6 +20,7 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = current_user.created_tests.new(test_params)
+    @test.timer = convert_time_to_integer
 
     if @test.save
       redirect_to [:admin, @test], notice: t('.success')
@@ -50,8 +52,17 @@ class Admin::TestsController < Admin::BaseController
 
   private
 
+  def convert_time_to_integer
+
+    if params[:timer_on]
+     return params["timer_params(4i)"].to_i * 3600 + params["timer_params(5i)"].to_i * 60
+    else
+     return nil
+    end
+  end
+
   def test_params
-    params.require(:test).permit(:title, :level, :category_id, :timer_on, :timer)
+    params.require(:test).permit(:title, :level, :category_id, :timer)
   end
 
   def find_tests
