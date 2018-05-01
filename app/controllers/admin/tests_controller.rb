@@ -53,16 +53,13 @@ class Admin::TestsController < Admin::BaseController
   private
 
   def convert_time_to_integer
-
-    if params[:timer_on]
-     return params["timer_params(4i)"].to_i * 3600 + params["timer_params(5i)"].to_i * 60
-    else
-     return nil
+    if params[:timer_on] == "1"
+     params["timer_params(4i)"].to_i * 3600 + params["timer_params(5i)"].to_i * 60
     end
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id, :timer)
+    params.require(:test).permit(:title, :level, :category_id)
   end
 
   def find_tests
