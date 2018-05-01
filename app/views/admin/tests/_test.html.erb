@@ -5,6 +5,11 @@
   </td>
   <td class="align-middle"><%= test_level(test) %></td>
   <td class="align-middle"><%= test.questions.count %></td>
+  <% if test.timer.nil? %>
+    <td class="align-middle">Without timer</td>
+  <% else %>
+    <td class="align-middle"><%= test.timer %></td>
+  <% end %>
   <td class="align-middle">
     <button type="button">
       <%= link_to t('.show'), admin_test_path(test) %>

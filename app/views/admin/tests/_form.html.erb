@@ -14,10 +14,22 @@
   <p>
     <%= form.label :category_id %><br>
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
-
   </p><br>
 
+   <%= form_with url: new_admin_test_path do |f| %>
+
+    <p class='timer_on'>
+      <%= f.label :timer_on %><br>
+      <%= f.check_box :timer_on, id: :timer_on %>
+    </p><br>
+
+    <p class='hide' id=timer >
+      <%= f.label :timer_params %><br>
+      <%= f.time_select :timer_params %>
+    </p><br>
 
 
-<p><%= form.submit %></p>
+      <p><%= form.submit %></p>
+<% end %>
+
 <% end %>
