@@ -9,7 +9,9 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-      @test_passage.accept!(params[:answer_ids]) unless @test_passage.timeout < 0
+      if @test_passage.timeout.nil? || @test_passage.timeout > 0
+        @test_passage.accept!(params[:answer_ids])
+      end
 
       if @test_passage.completed?
         TestsMailer.completed_test(@test_passage).deliver_now

@@ -34,7 +34,7 @@ class TestPassage < ApplicationRecord
   end
 
   def timeout
-    self.test.timer - (Time.now.to_i % 86400 - self.created_at.to_i % 86400)
+    self.test.timer - (Time.now.to_i % 86400 - self.created_at.to_i % 86400) unless self.test.timer.nil?
   end
 
   private
