@@ -26,14 +26,23 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :user_bages, only: %i[index] do
+  end
+
   namespace :admin do
+    resources :bages, shallow:true do
+    end
+
+    resources :user_bages, shallow:true do
+    end
+
     resources :tests do
       patch :update_inline, on: :member
       resources :questions, shallow:true do
         resources :answers, shallow:true
       end
-
     end
+
     resources :gists, only: :index
   end
 

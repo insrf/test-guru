@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180426155539) do
+ActiveRecord::Schema.define(version: 20180509120805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 20180426155539) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "bages", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "rule"
+    t.integer "number_of_rule"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -74,6 +83,15 @@ ActiveRecord::Schema.define(version: 20180426155539) do
     t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true
   end
 
+  create_table "user_bages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "bage_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bage_id"], name: "index_user_bages_on_bage_id"
+    t.index ["user_id"], name: "index_user_bages_on_user_id"
+  end
+
   create_table "user_profiles", force: :cascade do |t|
     t.string "name"
     t.integer "test_id"
@@ -107,4 +125,6 @@ ActiveRecord::Schema.define(version: 20180426155539) do
     t.index ["type"], name: "index_users_on_type"
   end
 
+  add_foreign_key "user_bages", "bages"
+  add_foreign_key "user_bages", "users"
 end

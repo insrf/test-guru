@@ -1,0 +1,26 @@
+<h1>Badges</h1>
+
+<%= render 'shared/errors', resource: @user_bage %>
+
+<% if @user_bage.present? %>
+<table class="table-sm table-striped table-bordered">
+  <thead class="thead-inverse">
+    <tr>
+    <th>User mail</th>
+    <th>Bage name</th>
+    <th>Bage icon</th>
+    <th>Bage rule</th>
+    <th colspan="3">Action</th>
+    </tr>
+  </thead>
+
+  <%= render @user_bage %>
+
+</table>
+<% else %>
+  <p>No badges</p>
+<% end %>
+
+<button type="button" >
+  <%=link_to "Back", admin_user_bages_path %>
+</button>

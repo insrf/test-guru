@@ -1,0 +1,22 @@
+<h1>You Badges</h1>
+
+<% if @user_bages.present? %>
+<table class="table-sm table-striped table-bordered">
+  <thead class="thead-inverse">
+    <tr>
+    <th>Name</th>
+    <th>Icon</th>
+    <th>Rule</th>
+    </tr>
+  </thead>
+
+  <%= render @user_bages %>
+
+</table>
+<% else %>
+  <p>You have no badges</p>
+<% end %>
+
+<button type="button" >
+  <%=link_to "Back", root_path %>
+</button>

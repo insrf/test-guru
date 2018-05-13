@@ -1,0 +1,26 @@
+<%= form_with model: [:admin, @bage], local: true do |form| %>
+  <%= render 'shared/errors', resource: @bage %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p><br>
+
+  <p>
+    <%= form.label :url %><br>
+    <%= form.text_field :url %><br>
+    <%= link_to "info_icons", "https://material.io/tools/icons/", :target => "_blank"%>
+  </p><br>
+
+  <p>
+    <%= form.label :rule %><br>
+    <%= form.select :rule, options_for_select([[rule_select_key(1), 1], [rule_select_key(2), 2],
+                                              [rule_select_key(3), 3], [rule_select_key(4), 4],
+                                              [rule_select_key(5), 5], [rule_select_key(6), 6],
+                                              [rule_select_key(7), 7]]) %>
+
+    </p><br>
+
+  <p><%= form.submit %></p>
+
+<% end %>

@@ -1,0 +1,2 @@
+class BagesController < ApplicationController
+end
