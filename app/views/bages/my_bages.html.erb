@@ -2,7 +2,7 @@
 
 <%= link_to 'Show all badges', bages_path %>
 
-<% if @user_bages.present? %>
+<% if @my_bages.present? %>
 <table class="table-sm table-striped table-bordered">
   <thead class="thead-inverse">
     <tr>
@@ -12,7 +12,7 @@
     </tr>
   </thead>
 
-  <%= render @user_bages %>
+  <%= render @my_bages %>
 
 </table>
 <% else %>

@@ -26,8 +26,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :user_bages, only: %i[index] do
-  end
+  get "my_bages" => "bages#my_bages"
 
   get "bages" => "bages#index"
 
