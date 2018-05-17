@@ -7,19 +7,7 @@ class UserBagesController < ApplicationController
 
   end
 
-  def show
-
-  end
-
-  def create
-
-  end
-
   private
-
-  def find_badge
-    @user_bage = UserBage.where(user_id: params[:id])
-  end
 
   def find_badges
     @user_bages = UserBage.where(user_id: current_user.id)

@@ -1,0 +1,20 @@
+<h1>New Badge</h1>
+
+<%= form_with url: admin_bage_bages_user do |form| %>
+  <%= render 'shared/errors', resource: @user_bage %>
+
+  <p>
+    <%= form.label :user_id %><br>
+    <%= form.collection_select :user_id, User.all, :id, :email, prompt: true %>
+  </p><br>
+
+  <p>
+    <%= form.label :bage_id %><br>
+    <%= form.collection_select :bage_id, Bage.all, :id, :name, prompt: true %>
+  </p><br>
+
+  <p><%= form.submit %></p>
+
+<% end %>
+
+<%= link_to "back", admin_user_bages_path %>

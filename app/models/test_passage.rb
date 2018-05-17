@@ -37,42 +37,6 @@ class TestPassage < ApplicationRecord
     self.test.timer - (Time.now.to_i % 86400 - self.created_at.to_i % 86400) unless self.test.timer.nil?
   end
 
-  def self.first_test_complited_test_badge?(current_user, current_test)
-    self.where(user_id: current_user, test_id: current_test).first.success?
-  end
-
-  def self.all_some_category_test_passed(current_user, category)
-    @correct_tests_id = []
-
-    current_user.test_passages.joins(:test => :category).where("categories.title" => category).each do |math|
-      if math.success?
-      @correct_tests_id << math.test_id
-      end
-    end
-
-    if (Test.joins(:category).where("categories.title" => category).ids - @correct_tests_id).empty?
-      true
-    else
-      false
-    end
-  end
-
-  def self.all_some_level_test_passed(current_user, level)
-    @correct_tests_id = []
-
-    current_user.test_passages.joins(:test).where("tests.level" => level).each do |math|
-      if math.success?
-      @correct_tests_id << math.test_id
-      end
-    end
-
-    if (Test.where(level: level).ids - @correct_tests_id).empty?
-      true
-    else
-      false
-    end
-  end
-
   private
 
   def before_validation_set_first_question
@@ -93,5 +57,7 @@ class TestPassage < ApplicationRecord
   def correct_answers
     self.current_question.answers.correct
   end
+
+
 
 end

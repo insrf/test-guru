@@ -29,8 +29,12 @@ Rails.application.routes.draw do
   resources :user_bages, only: %i[index] do
   end
 
+  get "bages" => "bages#index"
+
   namespace :admin do
     resources :bages, shallow:true do
+      post "user_bages" => "user_bages#create"
+      get "new_user_bage" => "user_bages#new"
     end
 
     resources :user_bages, shallow:true do

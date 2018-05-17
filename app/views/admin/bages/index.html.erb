@@ -4,6 +4,10 @@
   <%=link_to "new_badge", new_admin_bage_path %>
 </button>
 
+<button type="button" >
+  <%=link_to "new_user_bage", admin_bage_new_user_bage_path(@bages) %>
+</button>
+
 <%= render 'shared/errors', resource: @bage %>
 
 <% if @bages.present? %>

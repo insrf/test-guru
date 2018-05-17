@@ -1,0 +1,10 @@
+<tr>
+  <td class="align-middle">
+    <%= content_tag :span, bage.name %>
+  </td>
+
+  <td class="align-middle"><i class="material-icons md-36"> <%= bage.url %></i></td>
+  <td class="align-middle">
+    <%= content_tag :span, rule_select_key(bage.rule.to_i) %>
+  </td>
+</tr>

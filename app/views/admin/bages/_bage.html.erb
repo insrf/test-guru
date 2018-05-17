@@ -2,25 +2,29 @@
   <td class="align-middle">
     <%= content_tag :span, bage.name %>
   </td>
+
   <td class="align-middle"><i class="material-icons md-36"> <%= bage.url %></i></td>
   <td class="align-middle">
-    <%= content_tag :span, rule_select_key(bage.rule.to_i) %>
+    <%= content_tag :span, bage.rule %>
   </td>
+
   <td class="align-middle">
     <button type="button">
       <%= link_to "Show", admin_bage_path(bage) %>
     </button>
   </td>
+
   <td class="align-middle">
     <button type="button">
       <%= link_to "Edit", edit_admin_bage_path(bage) %>
     </button>
   </td>
+
   <td class="align-middle">
     <button type="button" class="btn btn-warning-outline">
       <%= link_to "Delete", admin_bage_path(bage),
                             method: :delete,
                             data: { confirm: "Are you sure? "} %>
     </button>
-  </td>
+    </td>
 </tr>

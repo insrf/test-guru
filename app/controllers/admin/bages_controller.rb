@@ -39,10 +39,24 @@ class Admin::BagesController < Admin::BaseController
     redirect_to admin_bages_path
   end
 
+  def user_bages
+    @user_bage = UserBage.new(user_bage_params)
+
+    if @user_bage.save
+      redirect_to [:admin, @user_bage], notice: t('.success')
+    else
+      render :new
+    end
+  end
+
   private
 
   def bage_params
     params.require(:bage).permit(:name, :url, :rule)
+  end
+
+  def user_bage_params
+    params.require(:user_bage).permit(:user_id, :bage_id)
   end
 
   def find_bages
