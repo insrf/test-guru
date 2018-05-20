@@ -15,7 +15,7 @@ class TestPassagesController < ApplicationController
 
       if @test_passage.completed?
         TestsMailer.completed_test(@test_passage).deliver_now
-        set_badge(current_user, @test_passage)
+        set_badge(@test_passage)
         redirect_to result_test_passage_path
       else
         render :show
@@ -40,8 +40,8 @@ class TestPassagesController < ApplicationController
 
   private
 
-  def set_badge(current_user, test_passage)
-    AssignRuleBage.new(current_user, test_passage).call
+  def set_badge(test_passage)
+    AssignRuleBage.new(test_passage).call
   end
 
   def set_test_passage

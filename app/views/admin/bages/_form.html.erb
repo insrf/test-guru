@@ -12,14 +12,16 @@
     <%= link_to "info_icons", "https://material.io/tools/icons/", :target => "_blank"%>
   </p><br>
 
-  <p>
-    <%= form.label :rule %><br>
-    <%= form.select :rule, options_for_select([rule_select_key(0), rule_select_key(1),
-                                               rule_select_key(2), rule_select_key(3),
-                                               rule_select_key(4), rule_select_key(5),
-                                               rule_select_key(6)]) %>
-
+    <p>
+      <%= form.label :rule %><br>
+      <%= form.select :rule, Bage.distinct.pluck(:rule) %>
     </p><br>
+
+    <p>
+      <%= form.label :rule_value %><br>
+      <%= form.text_field :rule_value %>
+
+      </p><br>
 
   <p><%= form.submit %></p>
 

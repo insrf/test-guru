@@ -52,7 +52,7 @@ class Admin::BagesController < Admin::BaseController
   private
 
   def bage_params
-    params.require(:bage).permit(:name, :url, :rule)
+    params.require(:bage).permit(:name, :url, :rule, :rule_value)
   end
 
   def user_bage_params
