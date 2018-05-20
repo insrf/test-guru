@@ -9,10 +9,13 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-      @test_passage.accept!(params[:answer_ids]) unless @test_passage.timeout < 0
+      if @test_passage.timeout.nil? || @test_passage.timeout > 0
+        @test_passage.accept!(params[:answer_ids])
+      end
 
       if @test_passage.completed?
         TestsMailer.completed_test(@test_passage).deliver_now
+        set_badge(@test_passage)
         redirect_to result_test_passage_path
       else
         render :show
@@ -36,6 +39,10 @@ class TestPassagesController < ApplicationController
   end
 
   private
+
+  def set_badge(test_passage)
+    AssignRuleBage.new(test_passage).call
+  end
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])

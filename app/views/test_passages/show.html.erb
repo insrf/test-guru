@@ -25,8 +25,10 @@
   <button type="button" class="btn btn-success-outline"><%= form.submit 'Next' %></button>
 <% end %>
 
+<% unless @test_passage.timeout.nil? %>
 <b> Осталось: </b>
 
 
 <%= content_tag :div, "#{@test_passage.timeout}",
                  id: 'timer_inp', data: { value: @test_passage.id } %>
+<% end %>

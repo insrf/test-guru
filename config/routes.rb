@@ -26,14 +26,26 @@ Rails.application.routes.draw do
     end
   end
 
+  get "my_bages" => "bages#my_bages"
+
+  get "bages" => "bages#index"
+
   namespace :admin do
+    resources :bages, shallow:true do
+      post "user_bages" => "user_bages#create"
+      get "new_user_bage" => "user_bages#new"
+    end
+
+    resources :user_bages, shallow:true do
+    end
+
     resources :tests do
       patch :update_inline, on: :member
       resources :questions, shallow:true do
         resources :answers, shallow:true
       end
-
     end
+
     resources :gists, only: :index
   end
 

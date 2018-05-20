@@ -1,0 +1,34 @@
+<h1>Badges</h1>
+
+<button type="button" >
+  <%=link_to "new_badge", new_admin_bage_path %>
+</button>
+
+<button type="button" >
+  <%=link_to "new_user_bage", admin_bage_new_user_bage_path(@bages) %>
+</button>
+
+<%= render 'shared/errors', resource: @bage %>
+
+<% if @bages.present? %>
+<table class="table-sm table-striped table-bordered">
+  <thead class="thead-inverse">
+    <tr>
+    <th>Name</th>
+    <th>Icon</th>
+    <th>Rule</th>
+    <th>Rule value</th>
+    <th colspan="3">Action</th>
+    </tr>
+  </thead>
+
+  <%= render @bages %>
+
+</table>
+<% else %>
+  <p>No badges</p>
+<% end %>
+
+<button type="button" >
+  <%=link_to "Back", admin_tests_path %>
+</button>

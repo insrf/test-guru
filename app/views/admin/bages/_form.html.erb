@@ -1,0 +1,28 @@
+<%= form_with model: [:admin, @bage], local: true do |form| %>
+  <%= render 'shared/errors', resource: @bage %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p><br>
+
+  <p>
+    <%= form.label :url %><br>
+    <%= form.text_field :url %><br>
+    <%= link_to "info_icons", "https://material.io/tools/icons/", :target => "_blank"%>
+  </p><br>
+
+    <p>
+      <%= form.label :rule %><br>
+      <%= form.select :rule, Bage.distinct.pluck(:rule) %>
+    </p><br>
+
+    <p>
+      <%= form.label :rule_value %><br>
+      <%= form.text_field :rule_value %>
+
+      </p><br>
+
+  <p><%= form.submit %></p>
+
+<% end %>

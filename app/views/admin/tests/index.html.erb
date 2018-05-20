@@ -4,6 +4,10 @@
   <%=link_to t('.new_test'), new_admin_test_path %>
 </button>
 
+<button type="button" >
+  <%=link_to "Show Badges menu", admin_bages_path %>
+</button>
+
 <%= render 'shared/errors', resource: @test %>
 
 <% if @tests.present? %>
