@@ -6,13 +6,13 @@ class AssignRuleBage
 
   def call
     Bage.find_each do |badge|
-      add_badge!(badge) if send("#{badge.rule}_achieved?", badge.rule_value)
+      add_badge!(badge) if send("#{badge.rule}_achieved?", rule_value = badge.rule_value)
     end
   end
 
   private
 
-  def successful_passing_all_the_tests_of_some_level_achieved?(rule_value)
+  def all_some_category_tests_passed_achieved?(rule_value)
     @correct_tests_id = []
 
     @current_user.test_passages.joins(:test => :category).where("categories.title" => rule_value).each do |math|
@@ -29,7 +29,7 @@ class AssignRuleBage
 
   end
 
-  def all_some_category_tests_passed_achieved?(rule_value)
+  def successful_passing_all_the_tests_of_some_level_achieved?(rule_value)
 
     @correct_tests_id = []
 
